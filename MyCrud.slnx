@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Core/Application/Application.csproj" />
+    <Project Path="Core/Domain/Domain.csproj" />
+  </Folder>
+  <Folder Name="/External/">
+    <Project Path="External/API/API.csproj" />
+    <Project Path="External/Infrastructure/Infrastructure.csproj" />
+  </Folder>
+</Solution>

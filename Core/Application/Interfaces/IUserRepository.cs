@@ -1,11 +1,12 @@
-using Application.DTOs.User;
 using Domain.Entities;
 
 namespace Application.Interfaces
 {
     public interface IUserRepository
     {
-        Task<UserDto> GetUserById(Guid id);
-        Task<UserDto> CreateUserAsync(User user);
+        Task<User?> GetUserById(Guid id);
+        Task<User> CreateUserAsync(User user);
+        Task<Guid> DeleteUserByIdAsync(User user);
+        Task<List<User>> GetAllUser();
     }
 }

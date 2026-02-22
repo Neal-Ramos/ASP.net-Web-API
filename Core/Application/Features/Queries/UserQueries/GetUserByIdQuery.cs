@@ -1,7 +1,7 @@
-using Application.DTOs.User;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Queries.UserQueries
 {
-    public record GetUserByIdQuery(Guid Id): IRequest<UserDto>;
+    public record GetUserByIdQuery(Guid Id): IRequest<User>;
 }

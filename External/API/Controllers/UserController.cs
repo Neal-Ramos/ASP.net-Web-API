@@ -1,4 +1,6 @@
 using Application.Features.Commands.UserCommands.CreateUserAsync;
+using Application.Features.Commands.UserCommands.DeleteUserByIdAsync;
+using Application.Features.Queries.GetAllUserQueries;
 using Application.Features.Queries.UserQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +29,20 @@ namespace API.Controllers
         {
             var user = await _mediatR.Send(command);
             return Ok(user);
+        }
+
+        [HttpDelete("DeleteUserById")]
+        public async Task<IActionResult> DeleteUserById(DeleteUserByIdAsyncCommand command)
+        {
+            var delete = await _mediatR.Send(command);
+            return Ok(delete);
+        }
+
+        [HttpGet("GetAllUser")]
+        public async Task<IActionResult> GetAllUser(GetAllUserCommand command)
+        {
+            var userList = await _mediatR.Send(command);
+            return Ok(userList);
         }
     }
 }
